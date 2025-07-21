@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointment Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside>
+    <h2>Admin Panel</h2>
+    <nav>
+      <a href="#"><img src="https://img.icons8.com/fluency/24/combo-chart.png" /> Dashboard</a>
+      <a href="#"><img src="https://img.icons8.com/fluency/24/planner.png" /> Appointments</a>
+      <a href="#"><img src="https://img.icons8.com/fluency/24/activity-history.png" /> Reports</a>
+      <a href="#"><img src="https://img.icons8.com/fluency/24/settings.png" /> Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="dashboard-header">
+      <h1>Doctor Dashboard</h1>
+      <div class="right-header">
+        <input type="text" placeholder="Search..." class="filter-input">
+        <div class="icons">
+          <img src="https://img.icons8.com/fluency/24/appointment-reminders.png" class="icon icon-glow pulse" />
+          <img src="https://img.icons8.com/fluency/24/calendar.png" class="icon icon-glow pulse" />
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-container">
+      <div class="card"><h3>Total Patients</h3><p>1,240</p></div>
+      <div class="card"><h3>Appointments</h3><p>305</p></div>
+      <div class="card"><h3>Reports</h3><p>98</p></div>
+      <div class="card"><h3>Settings</h3><p>-</p></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card"><canvas id="lineChart"></canvas></div>
+      <div class="chart-card"><canvas id="barChart"></canvas></div>
+      <div class="chart-card"><canvas id="pieChart"></canvas></div>
+    </div>
+
+    <div class="appointments">
+      <h3>Recent Appointments</h3>
+      <input type="text" placeholder="Search appointments..." id="appointmentSearch" onkeyup="filterAppointments()" />
+      <ul>
+        <li>Dr. Smith with John Doe @ 10:00 AM</li>
+        <li>Dr. Jane with Alice @ 11:30 AM</li>
+        <li>Dr. Nick with Bob @ 01:00 PM</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
